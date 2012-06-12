@@ -1,0 +1,4 @@
+Use 1536 mb memory
+Use NAT networking with PCnet-FAST III
+Disable USB
+
