@@ -6,7 +6,8 @@ include("quickstart.inc");
  * @file
  *   Quickstart drush commands.
  *
- *   These commands are designed to be run inside the Quickstart development environment.
+ * These commands are designed to be run inside the Quickstart development
+ * environment.
  */
 
 /**
@@ -18,7 +19,7 @@ function _quickstart_arg_list() {
 }
 
 /**
- * Implements hook_drush_command()
+ * Implements hook_drush_command().
  * @return array
  */
 function quickstart_drush_command() {
@@ -105,7 +106,7 @@ function quickstart_drush_command() {
 }
 
 /**
- * Implementation of hook_drush_help().
+ * Implements hook_drush_help().
  */
 function quickstart_drush_help($section) {
   switch ($section) {
@@ -115,7 +116,8 @@ function quickstart_drush_help($section) {
 /**
  * Helper function to check input parameters
  * @param  $required any parameters that are required
- * @return array  if $ret['fail'] is true, then check failed, and an error was logged.
+ * @return array
+ *   If $ret['fail'] is true, then check failed, and an error was logged.
  */
 function _quickstart_params($required) {
   // check arguments
@@ -123,8 +125,7 @@ function _quickstart_params($required) {
   $options = drush_get_context('cli');
   $ret = array();
 
-  // Commands
-
+  // COMMANDS.
   // what steps do we take: "" -> "all" -> all our setup steps.
   if (count($commands)==1) {
     $commands = array("all");
@@ -133,8 +134,7 @@ function _quickstart_params($required) {
     $commands = _quickstart_arg_list();
   }
 
-  // Options
-
+  // OPTIONS.
   // Domain always required
   // remove /'s
   $options['domain'] = str_replace('/', '', $options['domain']);
@@ -221,7 +221,8 @@ function drush_quickstart_create() {
   $domain = $params['domain'];
   $domain_ = $params['domain_'];
 
-  drush_log(' ', 'ok'); // add newline at top of output
+  // Add newline at top of output.
+  drush_log(' ', 'ok');
 
   try {
     if (array_search("dns", $params)) {
@@ -272,7 +273,8 @@ function drush_quickstart_destroy() {
   if (isset($params['fail'])) return drush_set_error(0, dt('Bad parameters.  Try "drush help quickstart-destroy"'));
   $domain = $params['domain'];
 
-  drush_log(' ', 'ok'); // add newline at top of output
+  // Add newline at top of output.
+  drush_log(' ', 'ok');
 
   try {
     if (array_search("install", $params)) {

@@ -163,7 +163,8 @@ function quickstart_destroy_apache($domain, $params) {
 }
 
 /**
- * These define SQL commands to run on database.  CREATE USER causes trouble.  Note GRANT ALL ON *.* for site-install
+ * These define SQL commands to run on database. CREATE USER causes trouble.
+ * Note GRANT ALL ON *.* for site-install.
  */
 define('DATABASE_CREATE', "
 GRANT USAGE ON *.* TO #DOMAIN#@localhost IDENTIFIED BY '#DOMAIN#' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
@@ -171,7 +172,8 @@ CREATE DATABASE IF NOT EXISTS #DOMAIN#;
 GRANT ALL PRIVILEGES ON *.* TO #DOMAIN#@localhost;
 FLUSH PRIVILEGES;");
 /**
- * We GRANT before DROP USER to make sure there is something to drop.  USAGE is synonym for 'no priveledges'.
+ * We GRANT before DROP USER to make sure there is something to drop. USAGE is
+ * synonym for 'no priveledges'.
  */
 define('DATABASE_DESTROY', "
 GRANT USAGE ON *.* TO #DOMAIN#@localhost;
@@ -333,7 +335,8 @@ function quickstart_create_install($domain, $params) {
 
   // D7 specific
   if ($dversion=='d7') {
-    // Create a private files folder.  This is done to make fix-perms not break configuring a private files directory
+    // Create a private files folder. This is done to make fix-perms not break
+    // configuring a private files directory.
     if (!file_exists($codepath . '/sites/default/files_private')) {
       quickstart_shell_exec("sudo mkdir $codepath/sites/default/files_private");
     }
