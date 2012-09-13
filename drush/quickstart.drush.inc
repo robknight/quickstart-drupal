@@ -38,22 +38,22 @@ function quickstart_drush_command() {
       'what' => 'Optional. One or more items to create: [' . implode('|', _quickstart_arg_list()) . '|all] Defaults to "all"',
     ),
     'options' => array(
-      'domain'       => 'Required (all).  Domain name of new site.  Use this to reference site with other commands.  Becomes dns, dbname, dbuser, dbpass, site-name, and kitchen-sink',
-      'dbuser'       => 'Optional (db).  Root mysql user.  Defaults to "root"',
-      'dbpassword'   => 'Optional (db).  Root mysql password.  Defaults to "quickstart"',
-      'codepath'     => 'Optional (apache,code,install).  Path to drupal code.  Defaults to "~/websites/[domain]"',
-      'makefile'     => 'Optional (code).  Path to drupal make file.  Defaults to D7 "~/websites/default.make"',
-      'profile'      => 'Optional (install).  Name of profile to install.  Defaults to "default" in D6, "standard" in D7',
-      'db-url'       => 'Optional (install).  DB url.  Defaults to "mysql://[domain]]:[domain]@localhost/[domain]" (replace . with _ in [domain])',
-      'db-prefix'    => 'Optional (install).  DB table prefix.  Defaults to ""',
-      'account-name' => 'Optional (install).  Name of user 1.  Defaults to "admin"',
-      'account-pass' => 'Optional (install).  Password user 1.  Defaults to "admin"',
-      'account-mail' => 'Optional (install).  Email of user 1.  Defaults to "admin@[domain]"',
-      'locale'       => 'Optional (install).  Installation profile.  Defaults to "en"',
-      'clean-url'    => 'Optional (install).  Enable clean-urls?  Defaults to "1"',
-      'site-name'    => 'Optional (install).  Site name.  Defaults to "[domain]"',
-      'site-mail'    => 'Optional (install).  Site default email.  Defaults to "info@[domain]"',
-      'sites-subdir' => 'Optional (install).  Dir in /sites folder.  Defaults to "default"',
+      'domain'       => 'Required (all). Domain name of new site. Use this to reference site with other commands. Becomes dns, dbname, dbuser, dbpass, site-name, and kitchen-sink',
+      'dbuser'       => 'Optional (db). Root mysql user. Defaults to "root"',
+      'dbpassword'   => 'Optional (db). Root mysql password. Defaults to "quickstart"',
+      'codepath'     => 'Optional (apache,code,install). Path to drupal code. Defaults to "~/websites/[domain]"',
+      'makefile'     => 'Optional (code). Path to drupal make file. Defaults to D7 "~/websites/default.make"',
+      'profile'      => 'Optional (install). Name of profile to install. Defaults to "default" in D6, "standard" in D7',
+      'db-url'       => 'Optional (install). DB url. Defaults to "mysql://[domain]]:[domain]@localhost/[domain]" (replace . with _ in [domain])',
+      'db-prefix'    => 'Optional (install). DB table prefix. Defaults to ""',
+      'account-name' => 'Optional (install). Name of user 1. Defaults to "admin"',
+      'account-pass' => 'Optional (install). Password user 1. Defaults to "admin"',
+      'account-mail' => 'Optional (install). Email of user 1. Defaults to "admin@[domain]"',
+      'locale'       => 'Optional (install). Installation profile. Defaults to "en"',
+      'clean-url'    => 'Optional (install). Enable clean-urls? Defaults to "1"',
+      'site-name'    => 'Optional (install). Site name. Defaults to "[domain]"',
+      'site-mail'    => 'Optional (install). Site default email. Defaults to "info@[domain]"',
+      'sites-subdir' => 'Optional (install). Dir in /sites folder. Defaults to "default"',
     ),
     'examples' => array(
       'Create D7 site in one command: setup dns, apache, create db, download d6, run installer, open in firefox' => 'drush quickstart-create --domain=example1.dev',
@@ -76,7 +76,7 @@ function quickstart_drush_command() {
     ),
     'options' => array(
       'domain' => 'Domain name to destroy.',
-      'codepath' => 'Path to drupal code.  Defaults to ~/websites/[domain]',
+      'codepath' => 'Path to drupal code. Defaults to ~/websites/[domain]',
     ),
     'examples' => array(
       'Simplest format' => 'drush qd --domain=example.dev',
@@ -101,7 +101,7 @@ function quickstart_drush_command() {
     'arguments' => array(),
     'options' => array(
       'domain' => 'Domain name to fix permissions.',
-      'codepath' => 'Path to drupal code.  Defaults to ~/websites/[domain]',
+      'codepath' => 'Path to drupal code. Defaults to ~/websites/[domain]',
     ),
     'examples' => array(
       'Simplest format' => 'drush qf --domain=example.dev',
@@ -209,7 +209,7 @@ function _quickstart_params($required) {
 function drush_quickstart_fixperms() {
   $params = _quickstart_params(array('domain'));
   if (isset($params['fail'])) {
-    return drush_set_error(0, dt('Bad parameters.  Try "drush help quickstart-fixperms"'));
+    return drush_set_error(0, dt('Bad parameters. Try "drush help quickstart-fixperms"'));
   }
 
   $codepath = $params['codepath'];
@@ -231,7 +231,7 @@ function drush_quickstart_fixperms() {
 function drush_quickstart_create() {
   $params = _quickstart_params(array('domain'));
   if (isset($params['fail'])) {
-    return drush_set_error(0, dt('Bad parameters.  Try "drush help quickstart-create"'));
+    return drush_set_error(0, dt('Bad parameters. Try "drush help quickstart-create"'));
   }
   $domain = $params['domain'];
   $domain_ = $params['domain_'];
@@ -290,7 +290,7 @@ function drush_quickstart_destroy() {
 
   $params = _quickstart_params(array('domain'));
   if (isset($params['fail'])) {
-    return drush_set_error(0, dt('Bad parameters.  Try "drush help quickstart-destroy"'));
+    return drush_set_error(0, dt('Bad parameters. Try "drush help quickstart-destroy"'));
   }
   $domain = $params['domain'];
 

@@ -2,9 +2,9 @@
 
 /**
  * @file
- * This is an include file.  These are the "callback" functions that drush
- * uses to get the job done.  See quickstart.drush.inc for the definition of
- * the commands.
+ * This is an include file. These are the "callback" functions that drush uses
+ * to get the job done. See quickstart.drush.inc for the definition of the
+ * commands.
  *
  * Example make file for d7 http://drupal.org/node/852412
  *
@@ -14,7 +14,7 @@
  */
 
 /**
- * Helper function for executing shell commands.  Throws exceptions on error.
+ * Helper function for executing shell commands. Throws exceptions on error.
  *
  * @param string $cmd
  *   The command to run.
@@ -66,7 +66,7 @@ function quickstart_fixpath($pathin) {
 }
 
 /**
- * Create the DNS.  Edits /etc/hosts on local machine.
+ * Create the DNS. Edits /etc/hosts on local machine.
  *
  * Entries in file are marked with #quickstart
  *
@@ -289,7 +289,7 @@ function quickstart_create_code($domain, $params) {
 }
 
 /**
- * Deletes the sites files using rm -rf.  Also path.old.
+ * Deletes the sites files using rm -rf. Also path.old.
  *
  * @param string $domain
  *   The domain name.
@@ -300,7 +300,7 @@ function quickstart_destroy_code($domain, $params) {
   $codepath = $params['codepath'];
   // Only delete a web folder. "drush qd --codepath=/" would be bad.
   if (!file_exists($codepath . '/index.php')) {
-    drush_log('No index.php found.  Aborting deletion of files...', 'warning');
+    drush_log('No index.php found. Aborting deletion of files...', 'warning');
     return;
   }
   quickstart_shell_exec("sudo rm -rf $codepath");
@@ -418,7 +418,7 @@ function quickstart_destroy_install($domain, $params) {
   // Only delete a web folder. "drush qd --codepath=/" would be bad.
   $codepath = $params['codepath'];
   if (!file_exists($codepath . '/index.php')) {
-    drush_log('No index.php found.  Aborting un-install of site...', 'warning');
+    drush_log('No index.php found. Aborting un-install of site...', 'warning');
     return;
   }
 
