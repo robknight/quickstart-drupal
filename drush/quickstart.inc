@@ -292,7 +292,7 @@ function quickstart_create_code($domain, $params) {
  */
 function quickstart_destroy_code($domain, $params) {
   $codepath = $params['codepath'];
-  // Only delete a web folder. "drush qd --codepath=/" would be bad.
+  // Only delete a web folder. "drush qsd --codepath=/" would be bad.
   if (!file_exists($codepath . '/index.php')) {
     drush_log('No index.php found. Aborting deletion of files...', 'warning');
     return;
@@ -400,7 +400,7 @@ function quickstart_create_install($domain, $params) {
 /**
  * Destroys a site.
  *
- * Return site to situation where "drush qc install --domain=site.dev" could
+ * Return site to situation where "drush qsc install --domain=site.dev" could
  * be re-run successfully.
  *
  * @param string $domain
@@ -409,7 +409,7 @@ function quickstart_create_install($domain, $params) {
  *   An associative array of parameters.
  */
 function quickstart_destroy_install($domain, $params) {
-  // Only delete a web folder. "drush qd --codepath=/" would be bad.
+  // Only delete a web folder. "drush qsd --codepath=/" would be bad.
   $codepath = $params['codepath'];
   if (!file_exists($codepath . '/index.php')) {
     drush_log('No index.php found. Aborting un-install of site...', 'warning');

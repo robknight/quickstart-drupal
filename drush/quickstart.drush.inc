@@ -57,14 +57,14 @@ function quickstart_drush_command() {
     ),
     'examples' => array(
       'Create D7 site in one command: setup dns, apache, create db, download d6, run installer, open in firefox' => 'drush quickstart-create --domain=example1.dev',
-      'Quick D6 site' => 'drush qc --domain=example2.dev --makefile=d6.make',
+      'Quick D6 site' => 'drush qsc --domain=example2.dev --makefile=d6.make',
       'Just DNS (/etc/hosts)' => 'drush quickstart-create dns --domain=example.dev',
       'Just apache (/etc/apache2/sites-enabled/)' => 'drush quickstart-create apache --domain=example.dev --codepath=/path/to/drupal',
       'Just database (mysql)' => 'drush quickstart-create database --domain=example.dev',
       'Just code (drush make)' => 'drush quickstart-create code --domain=example.dev',
       'Just install (or quick reinstall)' => 'drush quickstart-create install --domain=example.dev',
     ),
-    'aliases' => array('qc'),
+    'aliases' => array('qsc'),
     // No bootstrap at all.
     'bootstrap' => DRUSH_BOOTSTRAP_DRUSH,
   );
@@ -79,7 +79,7 @@ function quickstart_drush_command() {
       'codepath' => 'Path to drupal code. Defaults to ~/websites/[domain]',
     ),
     'examples' => array(
-      'Simplest format' => 'drush qd --domain=example.dev',
+      'Simplest format' => 'drush qsd --domain=example.dev',
       'Complete format' => 'drush quickstart-destroy all --domain=example.dev --codepath=/path/to/drupal',
       'Remove DNS (/etc/hosts)' => 'drush quickstart-destroy dns --domain=example.dev',
       'Remove Apache (/etc/apache2/sites-enabled/)' => 'drush quickstart-destroy apache --domain=example.dev',
@@ -87,7 +87,7 @@ function quickstart_drush_command() {
       'Delete code and files (~/webistes/<domain>)' => 'drush quickstart-destroy code --domain=example.dev --codepath=/path/to/drupal',
       'Reset for reinstall (~/webistes/<domain>)' => 'drush quickstart-destroy install --domain=example.dev --codepath=/path/to/drupal',
     ),
-    'aliases' => array('qd'),
+    'aliases' => array('qsd'),
     // No bootstrap at all.
     'bootstrap' => DRUSH_BOOTSTRAP_DRUSH,
   );
@@ -104,10 +104,10 @@ function quickstart_drush_command() {
       'codepath' => 'Path to drupal code. Defaults to ~/websites/[domain]',
     ),
     'examples' => array(
-      'Simplest format' => 'drush qf --domain=example.dev',
+      'Simplest format' => 'drush qsf --domain=example.dev',
       'Use different codepath' => 'drush quickstart-fixperms --domain=example.dev --codepath=/path/to/drupal',
     ),
-    'aliases' => array('qf'),
+    'aliases' => array('qsf'),
     // No bootstrap at all.
     'bootstrap' => DRUSH_BOOTSTRAP_DRUSH,
   );
