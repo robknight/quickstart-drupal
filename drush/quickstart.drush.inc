@@ -118,6 +118,10 @@ function quickstart_drush_command() {
  * Implements hook_drush_help().
  */
 function quickstart_drush_help($section) {
+  switch ($section) {
+    case 'meta:quickstart:title':
+      return dt("Quickstart commands");
+  }
 }
 
 /**
