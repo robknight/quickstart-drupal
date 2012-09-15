@@ -5,12 +5,6 @@
  * This is an include file. These are the "callback" functions that drush uses
  * to get the job done. See quickstart.drush.inc for the definition of the
  * commands.
- *
- * Example make file for d7 http://drupal.org/node/852412
- *
- * site-install issues:
- *  - http://drupal.org/node/992928 - Drupal Core
- *  - http://drupal.org/node/983914 - Drush
  */
 
 /**
