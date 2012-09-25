@@ -1,0 +1,17 @@
+1) Build a VM with Vagrant and Virtualbox
+  Run build.sh
+ 
+  Get parameters [QuickstartUser], [VBoxName], [Desktop], [Projects]
+
+  Install vagrant, virtualbox, and python only if needed.
+
+  Write parameters to config files (ignored by git)
+
+  Use vagrant to build the VM.
+
+  Vagrantfile defines 
+    machine settings, 
+    base box (http://files.vagrantup.com/precise64.box)
+    starts Puppet
+  
+  Delete 
