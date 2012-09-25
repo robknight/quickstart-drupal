@@ -38,14 +38,16 @@ To Build your own:
 ======
 **** This documentation is not yet implemented ****
 
-0) The build environment is Ubuntu 12.04 with Cinnamon
+0) Quickstart is GPL 2.0, please consult the LICENSE.txt for how to use.
 
-1) Install software: Virtualbox, Vagrant, Git
+1) The build environment is Ubuntu 12.04 with Cinnamon
+
+2) Install software: Virtualbox, Vagrant, Git
 sudo apt-get install virtualbox vagrant git-core
 
-2) Clone this repo
+3) Clone this repo
 
-3) Run build.sh [QuickstartUser] [VBoxName] [Desktop] [Projects...]
+4) Run build.sh [QuickstartUser] [VBoxName] [Desktop] [Projects...]
 
     [QuickstartUser] name of the unix user in the virtual machine
       Defaults to 'quickstart'
